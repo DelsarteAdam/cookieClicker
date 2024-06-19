@@ -6,15 +6,10 @@ let totalMultiplicateurHtml = document.getElementById("multiplicateur");
 
 let cookieClick = document.getElementById("cookie");
 
-let bonus1 = document.getElementById("bonus1");
+let mutliplicatorBonus = document.getElementById("bonus1");
 let bonus2 = document.getElementById("bonus2");
 let bonus3 = document.getElementById("bonus3");
 let bonus4 = document.getElementById("bonus4");
-
-let bonus1Multiplicator = 2;
-let bonus2Multiplicator = 3;
-let bonus3Multiplicator = 4;
-let bonus4Multiplicator = 5;
 
 let bonus1Cost = 10;
 let bonus2Cost = 100;
@@ -32,6 +27,34 @@ let autoClickNumber = 0;
 
 function clickScore() {
   totalScore += 1 * totalMultiplicateur;
+  udpateScoreDisplay();
+  blockBonusPurchase();
+}
+
+function udpateScoreDisplay (){
+  totalScoreHtml.innerText = `${totalScore}`;
+}
+
+function addMultiplicator () {
+  totalMultiplicateur += 1;
+  totalScore -= bonus1Cost;
+  bonus1Cost += 10;
+  udpateScoreDisplay();
+  udpateMultiplicatorDisplay();
+  blockBonusPurchase();
+}
+
+  function blockBonusPurchase()  {
+    if (totalScore < bonus1Cost) {
+      mutliplicatorBonus.disabled = true;
+    } else {
+      mutliplicatorBonus.disabled = false;
+    }
+  }
+
+
+function udpateMultiplicatorDisplay() {
+  totalMultiplicateurHtml.innerText = `x${totalMultiplicateur}`;
 }
 
 //auto clicker function
@@ -40,4 +63,7 @@ function autoClicker() {
 }
 //window.setInterval(auto, 1000);
 
+
+blockBonusPurchase();
 cookieClick.addEventListener("click", clickScore);
+mutliplicatorBonus.addEventListener("click", addMultiplicator)
