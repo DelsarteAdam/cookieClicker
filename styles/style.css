@@ -1,1 +1,120 @@
 @import "reset.css";/*# sourceMappingURL=style.css.map */
+
+
+.container1{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+}
+
+h1{
+    font-size: 36px;
+    width: 80%;
+}
+
+img{
+    width: 50%;
+}
+
+.score{
+    background-color: black;
+    color:green;
+    width: 20%;
+    align-items: flex-end;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 48px;
+    padding: 10px 25px;
+    
+}
+
+
+.container2{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content:end;
+    background-color: aqua;
+}
+
+.multiplicateur{
+    background-color: black;
+    color:green;
+    width: 20%;
+    align-items: flex-end;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 48px;
+    padding: 10px 25px;
+
+}
+
+.container3{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content:end;
+    background-color: aqua;
+}
+
+.colonne_display{
+    background-color: black;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.commandes{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap : 20px;
+}
+
+.display_info{
+    width: 100%;
+    background-color: grey;
+
+}
+
+#bouton_commande{
+    background-color: blue;
+    color:white;
+    padding-top : 15px;
+    padding-bottom: 15px;
+    margin: 10px;
+    border: 1px white solid;
+    border-radius: 25px;
+    font-size: 18px;
+}
+
+
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
+
+<section class="container1">
+  <h1>Titre</h1>
+  <article class="score">00000</article>
+</section>
+
+<section class="container2">
+  <article class = "multiplicateur">x000</article>
+</section>
+<section class="container3">
+  <section class="colonne_display">
+    <img src="https://e7.pngegg.com/pngimages/145/992/png-clipart-sesame-street-cookie-monster-illustration-cookie-monster-elmo-biscuits-cookie-monster-miscellaneous-baking.png" alt="">
+  </section>
+  <section class="commandes">
+    <button id="bouton_commande" class="btnlevel1">Niveau 1</button>
+    <button id="bouton_commande" class="btnlevel2">Niveau 2</button>
+    <button id="bouton_commande" class="btnlevel3">Niveau 3</button>
+    <button id="bouton_commande" class="btnlevel4">Niveau 4</button>
+    <article class="display_info">
+      <p>Il contient des info</p>
+    </article>
+  </section>
+</section>
+*/
