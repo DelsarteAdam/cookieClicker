@@ -1,7 +1,7 @@
 let totalScore = 0;
 let totalScoreHtml = document.getElementById("score");
 
-let totalMultiplicateur = 0;
+let totalMultiplicateur = 1;
 let totalMultiplicateurHtml = document.getElementById("multiplier");
 
 let cookieClick = document.getElementById("cookie");
