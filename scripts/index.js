@@ -2,6 +2,7 @@ let totalScore = 0;
 let totalScoreHtml = document.getElementById("score");
 
 let totalMultiplicateur = 1;
+let totalMultiplicateurBonus = 1;
 let totalMultiplicateurHtml = document.getElementById("multiplicateurText");
 
 let cookieClick = document.getElementById("cookie");
@@ -32,6 +33,7 @@ let arrBonusCost = [bonus1Cost, bonus2Cost, bonus3Cost, bonus4Cost];
 let autoClickNumber = 0;
 
 let time200Bonus = 0;
+let time200BonusCheck = false;
 //update score
 
 function updateScore() {
@@ -40,18 +42,18 @@ function updateScore() {
 //update multiplicatorscore
 
 function updateMultiplicatorScore() {
-  totalMultiplicateurHtml.innerHTML = totalMultiplicateur;
+  totalMultiplicateurHtml.innerHTML = totalMultiplicateurBonus;
 }
 
 // add score on cookie click
 
 function clickScore() {
-  totalScore += 1 * totalMultiplicateur;
+  totalScore += 1 * totalMultiplicateurBonus;
 }
 
 //auto clicker function
 function autoClicker() {
-  totalScore += autoClickNumber * totalMultiplicateur;
+  totalScore += autoClickNumber * totalMultiplicateurBonus;
 }
 
 //check able to buy
@@ -81,6 +83,7 @@ function bonus1Action() {
   bonus1Cost = Math.floor(bonus1Cost);
   arrBonusCost[0] = bonus1Cost;
   bonus1UpdateText();
+
   updateMultiplicatorScore();
 }
 
@@ -101,27 +104,47 @@ function bonus2Action() {
 
 //bonus 200%
 
+function ActionMultiplicator() {
+  if (time200BonusCheck === true) {
+    totalMultiplicateurBonus = totalMultiplicateur * 2;
+  } else {
+    totalMultiplicateurBonus = totalMultiplicateur;
+  }
+}
+
 function bonus3UpdateText() {
   bonus3.innerHTML = `bonus 200%; time left${time200Bonus}sec cost ${bonus3Cost}`;
 }
 
 function bonus3Action() {
-  totalScore -= bonus3Cost;
-  bonus3Cost *= 1.25;
-  bonus3Cost = Math.floor(bonus3Cost);
-  arrBonusCost[2] = bonus3Cost;
-  time200Bonus += 30;
-  totalMultiplicateur *= 2;
-  const bonusTimer = setInterval(function () {
-    time200Bonus--;
-    bonus3UpdateText();
-    console.log(time200Bonus);
-    if (time200Bonus === 0) {
-      totalMultiplicateur /= 2;
+  if (time200BonusCheck === false) {
+    bonus3.style.backgroundColor = "red";
+    time200BonusCheck = true;
+    totalScore -= bonus3Cost;
+    bonus3Cost *= 1.25;
+    bonus3Cost = Math.floor(bonus3Cost);
+    arrBonusCost[2] = bonus3Cost;
+    time200Bonus += 30;
+    updateMultiplicatorScore();
+    const bonusTimer = setInterval(function () {
+      time200Bonus--;
       bonus3UpdateText();
-      clearInterval(bonusTimer);
-    }
-  }, 1000);
+      if (time200Bonus === 0) {
+        bonus3UpdateText();
+        time200BonusCheck = false;
+        bonus3.style.backgroundColor = "";
+        updateMultiplicatorScore();
+        clearInterval(bonusTimer);
+      }
+    }, 1000);
+  }
+}
+
+//all multi update
+
+function allMultiUpdate() {
+  ActionMultiplicator();
+  updateMultiplicatorScore();
 }
 
 //update able to click
@@ -135,3 +158,5 @@ window.setInterval(autoClicker, 1000);
 bonus3.addEventListener("click", bonus3Action);
 //update score on interval
 window.setInterval(updateScore, 10);
+//update multiplicator
+window.setInterval(allMultiUpdate, 10);
