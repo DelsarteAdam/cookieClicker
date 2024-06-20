@@ -29,7 +29,7 @@
           <p>Prêt à cliquer ? Cookie n'attend que ça !</p>
         </article>
         <article class="titre_multiplicateur">Multiplier :</article>
-        <article class="multiplicateur">x000</article>
+        <article id="multiplicateurText" class="multiplicateur">1</article>
       </section>
 
       <section id="cookie-container" class="container">
@@ -43,11 +43,26 @@
         </section>
 
         <section class="commandes">
-          <button id="bonus1" class="bouton_commande">Niveau 1</button>
-          <button id="bonus2" class="bouton_commande">Niveau 2</button>
-          <button id="bonus3" class="bouton_commande">Niveau 3</button>
-          <button id="bonus4" class="bouton_commande">Niveau 4</button>
-          <button id="bonus5" class="bouton_commande">Niveau 5</button>
+          <button id="bonus1" class="bouton_commande" disabled>
+            <h3>Multiplier x <span id="valeurMultiplicateur">2</span></h3>
+            <h4 id="coutBonus1">cout : <span id="valeurCoutBonus1"></span></h4>
+            <p id="infoBonus1"><a href="#">plus d'infos</a></p>
+          </button>
+          <button id="bonus2" class="bouton_commande" disabled>
+            <h3>Autoclick<span id="valeurMultiplicateurBonus2"></span></h3>
+            <h4 id="coutBonus2">cout : <span id="valeurCoutBonus2"> 1000</span></h4>
+            <p id="infoBonus2"><a href="#">plus d'infos</a></p>
+          </button>
+          <button id="bonus3" class="bouton_commande" disabled>
+            <h3>Bonus - A fond x <span id="valeurMultiplier">500</span></h3>
+            <h4 id="coutBonus3">cout : <span id="valeurCoutBonus3"> 10000</span></h4>
+            <p id="infoBonus3"><a href="#">plus d'infos</a></p>
+          </button>
+          <button id="bonus4" class="bouton_commande" disabled>
+            <h3>Bonus 4 <span id="valeurMultiplier"></span></h3>
+            <h4 id="coutBonus4">cout : <span id="valeurCoutBonus4"> 100000</span></h4>
+            <p id="infoBonus4"><a href="#">plus d'infos</a></p>
+          </button>
         </section>
       </section>
     </section>
