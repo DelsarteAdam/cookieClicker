@@ -5,7 +5,6 @@ let totalMultiplicateur = 1;
 let totalMultiplicateurHtml = document.getElementById("multiplicateur");
 
 
-
 let cookieClick = document.getElementById("cookie");
 let bonusDisplay = document.getElementById("bonus");
 
@@ -20,9 +19,9 @@ let mutliplicatorBonus = document.getElementById("bonus1");
 let autoClickBonus = document.getElementById("bonus2");
 let bonus200Pourcents = document.getElementById("bonus3");
 
-let bonus1Cost = 10;
-let bonus2Cost = 100;
-let bonus3Cost = 10;
+let bonus1Cost = 200;
+let bonus2Cost = 500;
+let bonus3Cost = 50;
 
 let bonus1Number = 0;
 let bonus2Number = 0;
@@ -34,13 +33,34 @@ let is200PercentBonusActive = false;
 // add score on cookie click
 
 function clickScore() {
+  let scoreValue;
   if (is200PercentBonusActive === false) {
-    totalScore += 1 * totalMultiplicateur;
+    scoreValue = 1 * totalMultiplicateur;
   } else {
-    totalScore += 2 * totalMultiplicateur;
+    scoreValue = 2 * totalMultiplicateur;
   }
+  totalScore += scoreValue;
   udpateScoreDisplay();
   blockBonusPurchase();
+  displayClickValue(scoreValue);
+}
+
+function displayClickValue(value) {
+  const cookieDisplay = document.getElementById("cookie-display");
+  const clickValueDisplay = document.createElement("div");
+  clickValueDisplay.textContent = `+${value}`;
+  clickValueDisplay.style.position = "absolute";
+  const containerWidth = cookieDisplay.offsetWidth;
+  const containerHeight = cookieDisplay.offsetHeight;
+
+  // Position aléatoire en largeur et hauteur, en tenant compte des dimensions du conteneur
+  clickValueDisplay.style.left = `${Math.random() * (containerWidth - 20)}px`; // 20px moins pour éviter tout débordement
+  clickValueDisplay.style.top = `${Math.random() * (containerHeight - 20)}px`; // 20px moins pour éviter tout débordement
+
+  clickValueDisplay.style.color = "white"; // Couleur du texte
+  clickValueDisplay.style.fontSize = "20px"; // Taille du texte
+  cookieDisplay.appendChild(clickValueDisplay);
+  setTimeout(() => clickValueDisplay.remove(), 1000); // Supprimer l'élément après 1 seconde
 }
 
 function udpateScoreDisplay() {
@@ -50,7 +70,7 @@ function udpateScoreDisplay() {
 function addMultiplicator() {
   totalMultiplicateur += 1;
   totalScore -= bonus1Cost;
-  bonus1Cost += 10;
+  bonus1Cost *= 1.5 ;
   udpateScoreDisplay();
   udpateMultiplicatorDisplay();
   blockBonusPurchase();
@@ -74,7 +94,7 @@ function udpateMultiplicatorDisplay() {
 function addAutoClicker() {
   autoClickNumber += 1;
   totalScore -= bonus2Cost;
-  bonus2Cost += 100;
+  bonus2Cost *= 2;
   udpateScoreDisplay();
   blockBonusPurchase();
   updateCostDisplay();
@@ -93,11 +113,18 @@ function simulateClick(element) {
 }
 
 function startAutoClicker(element, interval) {
-  setInterval(function () {
-    for (let i = 0; i < autoClickNumber; i++) {
+  if (autoClickNumber === 0) {
+    var clickInterval = setInterval(function () {
       simulateClick(element);
-    }
-  }, interval);
+    }, interval);
+
+    // Arrêter l'intervalle lorsque autoClickNumber est réduit à 0
+    autoClickBonus.addEventListener("click", function () {
+      if (autoClickNumber === 0) {
+        clearInterval(clickInterval);
+      }
+    });
+  }
 }
 
 // Bonus 200%
@@ -106,6 +133,7 @@ function activate200PercentBonus() {
   if (totalScore >= bonus3Cost && !is200PercentBonusActive) {
     is200PercentBonusActive = true;
     totalScore -= bonus3Cost;
+    bonus3Cost *= 1.5;
     udpateScoreDisplay();
     updateCostDisplay();
     blockBonusPurchase();
@@ -144,6 +172,8 @@ function updateCostDisplay() {
   document.getElementById("bonus3CostDisplay").textContent = bonus3Cost;
 }
 
+
+
 cookieClick.addEventListener("click", clickScore);
 mutliplicatorBonus.addEventListener("click", addMultiplicator);
 autoClickBonus.addEventListener("click", function () {
@@ -155,3 +185,4 @@ bonus200Pourcents.addEventListener("click", function () {
 
 updateCostDisplay();
 udpateTimer();
+
