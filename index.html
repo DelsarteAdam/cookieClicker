@@ -17,9 +17,13 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
+
+    <header class="titre">
+      <h1>Cookie-<span class="titre-custom">Clicker</span></h1>
+    </header>
+
     <section id="container-general">
       <section id="game-container" class="container">
-        <h1>Cookie <span class="titre-custom">Clicker</span></h1>
         <article class="titre_score">Score :</article>
         <article id="score" class="score">0000000</article>
       </section>
@@ -46,23 +50,20 @@
           <button id="bonus1" class="bouton_commande" disabled>
             <h3>Multiplier x <span id="valeurMultiplicateur">2</span></h3>
             <h4 id="coutBonus1">cout : <span id="valeurCoutBonus1"></span></h4>
-            <p id="infoBonus1"><a href="#">plus d'infos</a></p>
           </button>
           <button id="bonus2" class="bouton_commande" disabled>
             <h3>Autoclick<span id="valeurMultiplicateurBonus2"></span></h3>
             <h4 id="coutBonus2">cout : <span id="valeurCoutBonus2"> 1000</span></h4>
-            <p id="infoBonus2"><a href="#">plus d'infos</a></p>
           </button>
           <button id="bonus3" class="bouton_commande" disabled>
-            <h3>Click x 2 pendant 30 sec <span id="valeurMultiplier"></span></h3>
-            <p id="timer">00:00:00</p>
+            <h3>Multiplier x 2 / 15 sec </h3>
+            <p id="timerBonus3">00:00:00</p>
             <h4 id="coutBonus3">cout : <span id="valeurCoutBonus3"> 10000</span></h4>
-            <p id="infoBonus3"><a href="#">plus d'infos</a></p>
           </button>
           <button id="bonus4" class="bouton_commande" disabled>
-            <h3>Bonus 4 <span id="valeurMultiplier"></span></h3>
+            <h3>Click = entre 1 et 500 / 15 sec<span id="valeurMultiplier"></span></h3>
+            <p id="timerBonus4">00:00:00</p>
             <h4 id="coutBonus4">cout : <span id="valeurCoutBonus4"> 100000</span></h4>
-            <p id="infoBonus4"><a href="#">plus d'infos</a></p>
           </button>
         </section>
       </section>

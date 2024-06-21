@@ -1,12 +1,15 @@
+///////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////DECLARATION DES VARIABLES//////////////////////////////////
+
 let totalScore = 0;
 let totalScoreHtml = document.getElementById("score");
-let countdown = 5;
+let countdown = 15;
 let interval;
-let timerElement = document.getElementById("timer");
-
+let nombreAleatoire;
+let timerBonus3Element = document.getElementById("timerBonus3");
+let timerBonus4Element = document.getElementById("timerBonus4");
 let totalMultiplicateur = 1;
 let totalMultiplicateurHtml = document.getElementById("multiplicateurText");
-
 let cookieClick = document.getElementById("cookie");
 
 let bonus1 = document.getElementById("bonus1"); //OK
@@ -30,8 +33,8 @@ let bonus2Increment = 50;
 bonus2CostElement.innerHTML = bonus2Cost;
 
 let bonus3CostElement = document.getElementById("valeurCoutBonus3");
-let bonus3Cost = 1000;
-let bonus3Increment = 500;
+let bonus3Cost = 2500;
+let bonus3Increment = 1000;
 bonus3CostElement.innerHTML = bonus3Cost;
 
 let bonus4CostElement = document.getElementById("valeurCoutBonus4");
@@ -48,10 +51,16 @@ let bonus4Number = 0;
 
 let autoClickNumber = 0;
 
+
+///////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////// FONCTIONS /////////////////////////////////////////
+
+
 // add score on cookie click
 
 function clickScore() {
   totalScore += 1 * totalMultiplicateur;
+  totalScoreHtml.innerHTML = totalScore;
 }
 
 //auto clicker function
@@ -65,53 +74,90 @@ function applyFunction(){
   console.log ("une seconde de moins");
 }
 
-function updateTimerDisplay(seconds) {
+// MISE A JOUR DE L AFFICHAGE DU TIMER
+
+function updateTimerBonus3Display(seconds) {
   let hours = Math.floor(seconds / 3600);
   let minutes = Math.floor((seconds % 3600) / 60);
   let secs = seconds % 60;
-  timerElement.innerText = 
+  timerBonus3Element.innerText = 
       `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 }
 
-function startCoundown(){
+function updateTimerBonus4Display(seconds) {
+  let hours = Math.floor(seconds / 3600);
+  let minutes = Math.floor((seconds % 3600) / 60);
+  let secs = seconds % 60;
+  timerBonus4Element.innerText = 
+      `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+
+//GENERER UN NOMBRE ALEATOIRE
+
+function genererNombreAleatoire (){
+  return Math.floor(Math.random() * 200) + 1;
+}
+
+
+//AJOUTER UN COMPTE A REBOURS
+
+function startCoundownBonus3(){
   if (interval){
     clearInterval(interval);
   }
-  timerElement.style.display = 'block';
-  countdown = 5;
-  updateTimerDisplay(countdown);
+  timerBonus3Element.style.display = 'block';
+  countdown = 15;
+  updateTimerBonus3Display(countdown);
   interval = setInterval(function() {
     countdown--;
-    updateTimerDisplay(countdown);
+    updateTimerBonus3Display(countdown);
     applyFunction();
     if (countdown <=0 ) {
       clearInterval(interval);
       totalMultiplicateur = totalMultiplicateur / 2;
       totalMultiplicateurHtml.innerHTML = totalMultiplicateur;
-      timerElement.style.display = "none";
+      timerBonus3Element.style.display = "none";
       }
   }, 1000);
 }
 
 
+function startCoundownBonus4(){
+  if (interval){
+    clearInterval(interval);
+  }
+  timerBonus4Element.style.display = 'block';
+  countdown = 15;
+  updateTimerBonus4Display(countdown);
+  interval = setInterval(function() {
+    countdown--;
+    updateTimerBonus4Display(countdown);
+    applyFunction();
+    if (countdown <=0 ) {
+      clearInterval(interval);
+      
+      totalMultiplicateur = totalMultiplicateur * 1;
+      totalMultiplicateurHtml.innerHTML = totalMultiplicateur;
+      timerBonus4Element.style.display = "none";
+      }
+  }, 1000);
+}
+
 
 cookieClick.addEventListener("click", clickScore);
 
 
-// cookie.addEventListener("click", () => 
+///////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////// LE JEU ///////////////////////////////////////////
 
   function checkScore() {
   totalScoreHtml.innerHTML = totalScore;
 
-  if (totalScore >= bonus4Cost){
-    bonus4.disabled = false;
-  } else if (totalScore >= bonus3Cost) {
-    bonus3.disabled = false;
-  } else if (totalScore >= bonus2Cost) {
-    bonus2.disabled = false;
-  } else if (totalScore >= bonus1Cost) {
-    bonus1.disabled = false;
-  } 
+  bonus1.disabled = totalScore < bonus1Cost;
+  bonus2.disabled = totalScore < bonus2Cost;
+  bonus3.disabled = totalScore < bonus3Cost;
+  bonus4.disabled = totalScore < bonus4Cost;
+ 
 };
 
 window.setInterval(checkScore, 10);
@@ -119,43 +165,43 @@ window.setInterval(checkScore, 10);
 
 bonus1.addEventListener("click", () => {
   totalMultiplicateur++;
-    totalMultiplicateurHtml.innerHTML = totalMultiplicateur;
-  totalScore = totalScore - bonus1Cost;
-    totalScoreHtml.innerHTML = totalScore;
+  totalMultiplicateurHtml.innerHTML = totalMultiplicateur;
+  totalScore -= bonus1Cost;
+  totalScoreHtml.innerHTML = totalScore;
   bonus1Cost += bonus1Increment;
-    bonus1CostElement.innerHTML = bonus1Cost;
-    bonus1Increment +=10;
-  if (totalScore < bonus1Cost) {
-    bonus1.disabled = true;
-  } 
+  bonus1CostElement.innerHTML = bonus1Cost;
+  bonus1Increment +=10;
     })
 
 
 bonus2.addEventListener("click", () =>{
   autoClickNumber++;
-    setInterval(autoClicker, 1000);
-  totalScore = totalScore - bonus2Cost;
+  setInterval(autoClicker, 1000);
+  totalScore -= bonus2Cost;
   bonus2Cost += bonus2Increment;
-    bonus2CostElement.innerHTML = bonus2Cost;
-    bonus2Increment +=25;
-  if (totalScore < bonus2Cost){
-    bonus2.disabled = true;
-  }
+  bonus2CostElement.innerHTML = bonus2Cost;
+  bonus2Increment +=25;
 })
 
 bonus3.addEventListener("click", () => {
-  startCoundown();
-  totalMultiplicateur = totalMultiplicateur*2;
+  startCoundownBonus3();
+  totalMultiplicateur *= 2;
   totalMultiplicateurHtml.innerHTML = totalMultiplicateur;
-  
-  totalScore = totalScore - bonus3Cost;
+  totalScore -= bonus3Cost;
   bonus3Cost += bonus3Increment;
-    bonus3CostElement.innerHTML = bonus3Cost;
-    bonus3Increment +=250;
-
-  if (totalScore < bonus3Cost){
-    bonus3.disabled = true;
-  }
+  bonus3CostElement.innerHTML = bonus3Cost;
+  bonus3Increment +=500;
 })
 
+bonus4.addEventListener("click", () => {
+  startCoundownBonus4();
+  nombreAleatoire = genererNombreAleatoire();
+  cookieClick.addEventListener("click", () =>{
+  totalScore += nombreAleatoire;
+  })
+  totalScore -= bonus4Cost;
+  bonus4Cost += bonus4Increment;
+  bonus4CostElement.innerHTML = bonus4Cost;
+  bonus4Increment +=500;
 
+})
