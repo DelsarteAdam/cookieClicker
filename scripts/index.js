@@ -1,6 +1,8 @@
 let totalScore = 0;
 let totalScoreHtml = document.getElementById("score");
 let countdown = 5;
+let interval;
+let timerElement = document.getElementById("timer");
 
 let totalMultiplicateur = 1;
 let totalMultiplicateurHtml = document.getElementById("multiplicateurText");
@@ -28,7 +30,7 @@ let bonus2Increment = 50;
 bonus2CostElement.innerHTML = bonus2Cost;
 
 let bonus3CostElement = document.getElementById("valeurCoutBonus3");
-let bonus3Cost = 125;
+let bonus3Cost = 1000;
 let bonus3Increment = 500;
 bonus3CostElement.innerHTML = bonus3Cost;
 
@@ -59,15 +61,34 @@ function autoClicker() {
 }
 //window.setInterval(auto, 1000);
 
+function applyFunction(){
+  console.log ("une seconde de moins");
+}
+
+function updateTimerDisplay(seconds) {
+  let hours = Math.floor(seconds / 3600);
+  let minutes = Math.floor((seconds % 3600) / 60);
+  let secs = seconds % 60;
+  timerElement.innerText = 
+      `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+
 function startCoundown(){
-  let interval = setInterval(function() {
+  if (interval){
+    clearInterval(interval);
+  }
+  timerElement.style.display = 'block';
+  countdown = 5;
+  updateTimerDisplay(countdown);
+  interval = setInterval(function() {
     countdown--;
-    document.getElementById("timer").innerText = countdown;
+    updateTimerDisplay(countdown);
     applyFunction();
     if (countdown <=0 ) {
       clearInterval(interval);
       totalMultiplicateur = totalMultiplicateur / 2;
       totalMultiplicateurHtml.innerHTML = totalMultiplicateur;
+      timerElement.style.display = "none";
       }
   }, 1000);
 }
@@ -123,10 +144,18 @@ bonus2.addEventListener("click", () =>{
 })
 
 bonus3.addEventListener("click", () => {
-  countdown = 5;
   startCoundown();
   totalMultiplicateur = totalMultiplicateur*2;
   totalMultiplicateurHtml.innerHTML = totalMultiplicateur;
+  
+  totalScore = totalScore - bonus3Cost;
+  bonus3Cost += bonus3Increment;
+    bonus3CostElement.innerHTML = bonus3Cost;
+    bonus3Increment +=250;
+
+  if (totalScore < bonus3Cost){
+    bonus3.disabled = true;
+  }
 })
 
 

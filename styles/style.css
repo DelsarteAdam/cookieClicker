@@ -4,6 +4,10 @@ body{
     background-color:blanchedalmond;
 }
 
+body a{
+    text-decoration: none;
+}
+
 #container-general{
     width: 80%;
     margin: auto;
@@ -177,7 +181,7 @@ img:hover {
 
 .bouton_commande:disabled{
     background-color: #e5e5dc;
-    color:#e9c46a;
+    color:#264653;
     padding-top : 5px;
     padding-bottom: 5px;
     margin: 10px;
@@ -225,7 +229,7 @@ button p{
 }
 
 #timer {
-    /* display: none; */
+    display: none;
     color: #e76f51;
     font-weight: bold;
     font-size: 1em;
