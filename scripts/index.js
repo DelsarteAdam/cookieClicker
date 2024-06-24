@@ -89,6 +89,14 @@ function udpateMultiplicatorDisplay() {
   totalMultiplicateurHtml.innerText = `x${totalMultiplicateur}`;
 }
 
+// Change l'image lorsqu'elle est cliquée (animation cookie). l'image reste 0.2 secondes et est esnuite "reset" à son état d'origine.  
+cookieClick.addEventListener('click', function() {
+  cookieClick.src = './pictures/cookie_tongue.png';
+  setTimeout(function() {
+    cookieClick.src = './pictures/cookie_image.png';
+  }, 200);
+});
+
 //auto clicker function
 
 function addAutoClicker() {
@@ -113,7 +121,7 @@ function simulateClick(element) {
 }
 
 function startAutoClicker(element, interval) {
-  if (autoClickNumber === 0) {
+  if (autoClickNumber === 1) {
     var clickInterval = setInterval(function () {
       simulateClick(element);
     }, interval);
