@@ -222,7 +222,14 @@ img#cookie {
   display: none;
   color: #e76f51;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 0.8em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#bonus3Text {
+  margin: 0;
 }
 
 #timerBonus4 {
