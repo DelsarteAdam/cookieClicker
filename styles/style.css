@@ -218,6 +218,20 @@ img#cookie {
   color:#264653;
 }
 
+#timerBonus3 {
+  display: none;
+  color: #e76f51;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#timerBonus4 {
+  display: none;
+  color: #e76f51;
+  font-weight: bold;
+  font-size: 1em;
+}
+
 #randomText {
   text-align: center;
 }
@@ -324,6 +338,9 @@ img#cookie {
       display: none;
   }
 }
+
+
+
 
 /* .bouton_commande:hover {
   background-color: #e76f51;
