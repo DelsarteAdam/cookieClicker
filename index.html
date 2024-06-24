@@ -17,20 +17,19 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <section class="randomWords" id="randomText"></section>
+    
     <section id="container-general">
       <section id="game-container" class="container">
         <h1>Cookie <span class="titre-custom">Clicker</span></h1>
         <article class="titre_score">Score :</article>
         <article id="score" class="score">0000000</article>
+        
       </section>
 
       <section id="multiplier-container" class="container">
-        <article class="bienvenue">
-          <p>Prêt à cliquer ? Cookie n'attend que ça !</p>
-        </article>
+        <section class="randomWords" id="randomText"></section> 
         <article class="titre_multiplicateur">Multiplier :</article>
-        <article class="multiplicateur" id="bonusMultiplator">x000</article>
+        <!-- <article class="multiplicateur" id="bonusMultiplator">x000</article> -->
         <article class="multiplicateur" id="multiplicateurText">x000</article>
       </section>
 
@@ -59,9 +58,9 @@
 
     <button class="linkGithub">
       <a href="https://github.com/DelsarteAdam/cookieClicker" target="_blank"
-        >Github</a
-      >
+        >Github</a>
     </button>
+
 
     <script type="module" src="./scripts/index.js"></script>
   </body>
