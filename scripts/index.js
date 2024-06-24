@@ -151,7 +151,7 @@ function bonus3UpdateText() {
 
 function bonus3Action() {
   if (time200BonusCheck === false) {
-    bonus3.style.backgroundColor = "#ac851a";
+    // bonus3.style.backgroundColor = "#ac851a";
     time200BonusCheck = true;
     totalScore -= bonus3Cost;
     bonus3Cost *= 1.25;
@@ -167,7 +167,7 @@ function bonus3Action() {
         bonus3UpdateText();
         timerBonus3.innerHTML = "30 sec Time";
         time200BonusCheck = false;
-        bonus3.style.backgroundColor = "";
+        // bonus3.style.backgroundColor = "";
         updateMultiplicatorScore();
         clearInterval(bonusTimer);
       }

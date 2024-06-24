@@ -4,13 +4,14 @@ body {
   font-family: "Permanent Marker", cursive;
   background-color: rgb(250, 247, 243);
   padding: 0;
+  margin: auto 0;
   height: 100vh;
 }
 
 
 #container-general {
   width: 80%;
-  margin: auto;
+  margin:auto;
   border: 5px solid white;
   border-radius: 5px;
   background-color: white;
@@ -20,7 +21,6 @@ body {
   justify-content: center;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: auto;
 }
 
 /* PREMIERE PARTIE  */
@@ -175,8 +175,8 @@ img#cookie {
     background-color: #264653;
     color: white;
     border: 4px #2a9d8f solid;
-    font-size: 1.5em;
-    width: 75%;
+    font-size: 1.2em;
+    width: 100%;
     height: 80px;
     font-family: "Permanent Market", cursive;
     overflow: hidden;
@@ -209,7 +209,7 @@ img#cookie {
   border: 0px white solid;
   font-size: 1.5em;
   height: 80px;
-  width: 75%;
+  width: 100%;
   font-family: "Permanent Market", cursive;
 }
 
@@ -218,8 +218,21 @@ img#cookie {
   color:#264653;
 }
 
+#bonus3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#bonus3Text {
+  margin:0;
+}
+
 #timerBonus3 {
-  display: none;
+  display: flex;
+  justify-content: center;
+  margin:0;
   color: #e76f51;
   font-weight: bold;
   font-size: 1em;
@@ -234,6 +247,13 @@ img#cookie {
 
 #randomText {
   text-align: center;
+  text-wrap: nowrap;
+}
+
+.linkGithub {
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -255,12 +275,16 @@ img#cookie {
       align-items: center;
   }
 
+  #cookie-container {
+    padding-bottom: 0;
+  }
+
   #display-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   h1 {
@@ -310,33 +334,18 @@ img#cookie {
   }
       
   .bouton_commande {
-      margin-top: 40px;
-      width: 40%;
+      width: 100%;
       padding: 0;
   }
 
   #bonus3 {
-      width: 60%;
       margin-top: 0;
   }
-  
 
-  .bienvenue {
-  position: static;
-  left: auto;
-  top: auto;
-  transform: none;
-  width: 100%;
-  text-align: center;
+  #bonus3Text {
+    margin:0;
   }
-
-  .bienvenue p {
-      margin: 0;
-  }
-
-  hr {
-      display: none;
-  }
+   
 }
 
 

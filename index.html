@@ -19,18 +19,19 @@
   <body>
     
     <section id="container-general">
-      <section id="game-container" class="container">
-        <h1>Cookie <span class="titre-custom">Clicker</span></h1>
-        <article class="titre_score">Score :</article>
-        <article id="score" class="score">0000000</article>
-        
-      </section>
-
-      <section id="multiplier-container" class="container">
-        <section class="randomWords" id="randomText"></section> 
-        <article class="titre_multiplicateur">Multiplier :</article>
-        <article class="multiplicateur" id="bonusMultiplator" hidden>x000</article>
-        <article class="multiplicateur" id="multiplicateurText">x000</article>
+      <h1>Cookie <span class="titre-custom">Clicker</span></h1>
+      <section class="randomWords" id="randomText"></section> 
+      
+      <section id="display-container">
+        <section id="game-container" class="container">
+          <article class="titre_score">Score:</article>
+          <article id="score" class="score">0000000</article>
+        </section>
+        <section id="multiplier-container" class="container">
+          <article class="titre_multiplicateur">Multiplicateur:</article>
+          <article class="multiplicateur" id="bonusMultiplator" hidden>x000</article>
+          <article class="multiplicateur" id="multiplicateurText">x000</article>
+        </section>
       </section>
 
       <section id="cookie-container" class="container">
@@ -50,18 +51,14 @@
             <p id="bonus3Text">niveau3</p>
             <p id="timerBonus3">30 sec Time</p>
           </button>
-          <button id="bonus4" class="bouton_commande" disabled>Niveau 4</button>
-          <button id="bonus5" class="bouton_commande" disabled>Niveau 5</button>
         </section>
       </section>
+      <button class="linkGithub">
+        <a href="https://github.com/DelsarteAdam/cookieClicker" target="_blank"
+          >Github</a>
+      </button>
     </section>
-
-    <button class="linkGithub">
-      <a href="https://github.com/DelsarteAdam/cookieClicker" target="_blank"
-        >Github</a>
-    </button>
-
-
+ 
     <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
