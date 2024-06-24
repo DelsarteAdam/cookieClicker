@@ -1,182 +1,179 @@
-body{
-    
-    font-family: "Permanent Market", cursive;
-    background-color:blanchedalmond;
+body {
+  font-family: "Permanent Market", cursive;
+  background-color: blanchedalmond;
 }
 
-#container-general{
-    width: 80%;
-    margin: auto;
-    border: 0px solid white;
-    border-radius: 15px;
+#container-general {
+  width: 80%;
+  margin: auto;
+  border: 0px solid white;
+  border-radius: 15px;
 }
-
 
 /* PREMIERE PARTIE  */
 
 #game-container {
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    margin-top: 50px;
-    padding-top: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin-top: 50px;
+  padding-top: 50px;
 }
 
-h1{
-    font-size: 60px;
-    width: 60%;
-    text-align: center;
-    font-family: "Permanent Market", cursive;
-    margin: 0;
-    color: #264653;
-    font-weight: normal;
+h1 {
+  font-size: 60px;
+  width: 60%;
+  text-align: center;
+  font-family: "Permanent Market", cursive;
+  margin: 0;
+  color: #264653;
+  font-weight: normal;
 }
-.titre-custom{
-    color: #2a9d8f;
-    font-weight: bold;
+.titre-custom {
+  color: #2a9d8f;
+  font-weight: bold;
 }
-.titre-custom:hover{
-    color: #e76f51;
-    font-weight: bold;
+.titre-custom:hover {
+  color: #e76f51;
+  font-weight: bold;
 }
 
-.titre_score{
-    font-size: 36px;
-    padding : 10px;
-    width: 20%;
-    text-align: end;
+.titre_score {
+  font-size: 36px;
+  padding: 10px;
+  width: 20%;
+  text-align: end;
 }
-.score{
-    background-color: #264653;
-    color:white;
-    width: 20%;
-    align-items: flex-end;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 60px;
-    padding: 10px 25px;
-    text-align: end;
-    margin: 10px;
-    border: 0px solid white;
-    border-radius: 5px;
-    
+.score {
+  background-color: #264653;
+  color: white;
+  width: 20%;
+  align-items: flex-end;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 60px;
+  padding: 10px 25px;
+  text-align: end;
+  margin: 10px;
+  border: 0px solid white;
+  border-radius: 5px;
 }
 
 /* DEUXIME PARTIE  */
 
-#multiplier-container  {
-    margin: auto;
-    display: flex;
-    justify-content:end;
-    background-color: white;
+#multiplier-container {
+  margin: auto;
+  display: flex;
+  justify-content: end;
+  background-color: white;
 }
 
-.bienvenue{
-    width: 60%;
-    text-align: center;
-    font-size: 24px;
+.bienvenue {
+  width: 60%;
+  text-align: center;
+  font-size: 24px;
 }
-.titre_multiplicateur{
-    font-size: 36px;
-    padding : 10px;
-    width: 20%;
-    text-align: end;
-
+.titre_multiplicateur {
+  font-size: 36px;
+  padding: 10px;
+  width: 20%;
+  text-align: end;
 }
 
-.multiplicateur{
-    background-color: #264653;
-    color:white;
-    width: 20%;
-    align-items: flex-end;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-size: 48px;
-    padding: 10px 25px;
-    text-align: end;
-    margin : 10px;
-    border: 0px solid white;
-    border-radius: 5px;
-
+.multiplicateur {
+  background-color: #264653;
+  color: white;
+  width: 20%;
+  align-items: flex-end;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 48px;
+  padding: 10px 25px;
+  text-align: end;
+  margin: 10px;
+  border: 0px solid white;
+  border-radius: 5px;
 }
 
 /* TROISIEME PARTIE  */
 
-#cookie-container{
-    margin: auto;
-    display: flex;
-    justify-content:end;
-    background-color: white;
+#cookie-container {
+  margin: auto;
+  display: flex;
+  justify-content: end;
+  background-color: white;
 }
 
-.colonne_display{
-    background-color: #264653;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    margin: 25px;
-    border: 0px white solid;
-    border-radius: 15px;
-    box-shadow: 2px 2px 10px 1px black;
-
+.colonne_display {
+  position: relative;
+  background-color: #264653;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 25px;
+  border: 0px white solid;
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px 1px black;
 }
 
-img{
-    width: 40%;
-    animation:rotation 12s infinite linear;
+img {
+  width: 40%;
+  animation: rotation 12s infinite linear;
 }
 
 @keyframes rotation {
-    from{
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-
-.commandes{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    gap : 20px;
-    align-items: center;
-    justify-content: center;
+.commandes {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
-.display_info{
-    background-color: white;
-    padding: 10px;
-    margin-left : 10px;
-    margin-right: 10px;
-    height: 100px;
+.display_info {
+  background-color: white;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100px;
 }
 
-.bouton_commande{
-    background-color: #2a9d8f;
-    color:white;
-    padding-top : 15px;
-    padding-bottom: 15px;
-    margin: 10px;
-    border: 0px white solid;
-    border-radius: 25px;
-    font-size: 24px;
-    width: 60%;
-    box-shadow: 2px 2px 10px 1px black;
-    font-family: "Permanent Market", cursive;
+.bouton_commande {
+  background-color: #2a9d8f;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 10px;
+  border: 0px white solid;
+  border-radius: 25px;
+  font-size: 24px;
+  width: 60%;
+  box-shadow: 2px 2px 10px 1px black;
+  font-family: "Permanent Market", cursive;
 }
 
-.bouton_commande:hover{
-    background-color: #e76f51;
-    color: white;
-    padding-top : 15px;
-    padding-bottom: 15px;
-    margin: 10px;
-    border-radius: 25px;
-    font-size: 24px;
-    width: 60%;
-    box-shadow: 2px 2px 10px 1px black;
+.bouton_commande:hover {
+  background-color: #e76f51;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 10px;
+  border-radius: 25px;
+  font-size: 24px;
+  width: 60%;
+  box-shadow: 2px 2px 10px 1px black;
 }
 
+.bouton_commande:disabled {
+  background-color: grey;
+}
