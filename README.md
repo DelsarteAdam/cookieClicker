@@ -1,4 +1,5 @@
 # Cookie Clicker - Le "GOTY" <img src="./pictures/cookie_image.png" alt="Cookie Clicker" height="25" width="25">
+
 ## Qu'est ce que Cookie Clicker &#x1F914; ?
 
 Cookie clicker est un jeu réalisé par [Steven](https://github.com/stevenmottiaux), [Adam](https://github.com/DelsarteAdam) et [Cédric](https://github.com/Ceeeed1985). Le principe est simple, cliquer sur l'image de "Cookie" pour gagner des points. Ces points sont cumulables et permettent d'acheter des bonus. Une fois un bonus acheté, il est automatiquement activé et son coût est déduit du score total.
@@ -28,6 +29,7 @@ Dans Cookie Clicker, il y a 3 types de bonus disponibles :
 Le site est réalisé en HTML, CSS et Javascript. Le backend est réalisé en Javascript. Les différentes fonctions Javascript sont dans le fichier `scripts/index.js`. Elles permettent en résumé de gérer les différents bonus et le score. Elles permettent également d'activer certains bonus en fonction du score actuel.
 
 Voici l'arbologie des fichiers et dossiers du site :
+
 ```
 CookieClicker/
 ├── index.html
@@ -41,14 +43,11 @@ CookieClicker/
 ├── README.md
 ```
 
-## Demo du jeu (version mobile)	&#x1F4F1;
+## Demo du jeu (version mobile) &#x1F4F1;
 
-Voici une courte vidéo qui représente le fonctionnement du jeu : 
+Voici une courte vidéo qui représente le fonctionnement du jeu :
 
-<video width="300" height="400" controls>
-  <source src="./videos/demo.webm" type="video/webm">
-</video>
-
+![video](https://cdn.discordapp.com/attachments/1253244407587803187/1255073728702840862/demo.webm?ex=667bcdff&is=667a7c7f&hm=f168872b22ccc2b94669b71ce9af282c48c5e37502c763c9c75329bfdecfa1ee&)
 
 ## Lien vers le jeu &#x1F517;.
 
@@ -56,8 +55,6 @@ Vous retrouverez le lien vers le jeu sur le site [Cookie Clicker](https://delsar
 
 ## A faire &#x1F4AD;
 
-- Nous aimerions encore mettre en place un bonus qui peut devenir un malus selon la ***"chance"*** du joueur. Certains malus pourraientt être une perte de points ou une remise à 0 des points.
+- Nous aimerions encore mettre en place un bonus qui peut devenir un malus selon la **_"chance"_** du joueur. Certains malus pourraientt être une perte de points ou une remise à 0 des points.
 - Nous aimerions mettre en place un système de sauvegarde de la partie.
 - ...
-
-
