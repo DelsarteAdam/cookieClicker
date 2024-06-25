@@ -43,6 +43,12 @@ CookieClicker/
 ├── README.md
 ```
 
+## Demo du jeu (version mobile) &#x1F4F1;
+
+Voici une courte vidéo qui représente le fonctionnement du jeu :
+
+![video](https://delsarteadam.github.io/cookieClicker/videos/demo.webm)
+
 ## Lien vers le jeu &#x1F517;.
 
 Vous retrouverez le lien vers le jeu sur le site [Cookie Clicker](https://delsarteadam.github.io/CookieClicker/).
