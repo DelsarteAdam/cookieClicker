@@ -1,7 +1,7 @@
 # Cookie Clicker - Le "GOTY" <img src="./pictures/cookie_image.png" alt="Cookie Clicker" height="25" width="25">
 ## Qu'est ce que Cookie Clicker &#x1F914; ?
 
-Cookie clicker est un jeu réalisé par Steven, Adam et Cédric. Le principe est simple, cliquer sur l'image de "Cookie" pour gagner des points. Ces points sont cumulables et permettent d'acheter des bonus. Une fois un bonus acheté, il est automatiquement activé et son coût est déduit du score total.
+Cookie clicker est un jeu réalisé par [Steven](https://github.com/stevenmottiaux), [Adam](https://github.com/DelsarteAdam) et [Cédric](https://github.com/Ceeeed1985). Le principe est simple, cliquer sur l'image de "Cookie" pour gagner des points. Ces points sont cumulables et permettent d'acheter des bonus. Une fois un bonus acheté, il est automatiquement activé et son coût est déduit du score total.
 
 Il n'y a pas de limite de partie, le jeu peut être continué indéfiniment.
 
@@ -19,9 +19,9 @@ Ce jeu permet de se défouler un bon coup après une journée chargée de travai
 
 Dans Cookie Clicker, il y a 3 types de bonus disponibles :
 
-- Les "Auto-clickers" &#x261D;: Ce bonus permet d'automatiquement cliquer sur le cookie toutes les secondes.
-- Les "Multiplicateurs" &#x2716;: Ce bonus permet de multiplier le nombre de points gagnés par clic.
-- Les "Bonus 200%" &#x23F1;: Ce bonus permet de multiplier par 2 le nombre de points gagnés par clic et ceci pendant 30 secondes. Quand le timer (affiché dans le bouton du bonus) arrive à 0, le bonus est automatiquement désactivé.
+- Les "Auto-clickers" &#x261D;: ce bonus permet d'automatiquement cliquer sur le cookie toutes les secondes.
+- Les "Multiplicateurs" &#x2716;: ce bonus permet de multiplier le nombre de points gagnés par clic.
+- Les "Bonus 200%" &#x23F1;: ce bonus permet de multiplier par 2 le nombre de points gagnés par clic et ceci pendant 30 secondes. Quand le timer (affiché dans le bouton du bonus) arrive à 0, le bonus est automatiquement désactivé.
 
 ## Description technique du site
 
@@ -45,6 +45,10 @@ CookieClicker/
 
 Voici une courte vidéo qui représente le fonctionnement du jeu : 
 
+<video width="300" height="400" controls>
+  <source src="./videos/demo.webm" type="video/webm">
+</video>
+
 
 ## Lien vers le jeu &#x1F517;.
 
@@ -52,9 +56,8 @@ Vous retrouverez le lien vers le jeu sur le site [Cookie Clicker](https://delsar
 
 ## A faire &#x1F4AD;
 
-- Nous aimerions encore mettre en place un bonus qui peut devenir un malus selon la ***"chance"*** du joueur. Certains malus pourrait être une perte de points ou une remise totale à 0 des points.
+- Nous aimerions encore mettre en place un bonus qui peut devenir un malus selon la ***"chance"*** du joueur. Certains malus pourraientt être une perte de points ou une remise à 0 des points.
 - Nous aimerions mettre en place un système de sauvegarde de la partie.
-
 - ...
 
 
