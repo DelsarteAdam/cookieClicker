@@ -47,7 +47,9 @@ CookieClicker/
 
 Voici une courte vidéo qui représente le fonctionnement du jeu :
 
-![video](https://delsarteadam.github.io/cookieClicker/videos/demo.webm)
+[demo.webm](https://github.com/DelsarteAdam/cookieClicker/assets/169654085/ddd4b21e-18ae-494b-a6b9-d74fb5be411e)
+
+
 
 ## Lien vers le jeu &#x1F517;.
 
