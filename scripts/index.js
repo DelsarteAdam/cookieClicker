@@ -15,7 +15,7 @@ let bonus3 = document.getElementById("bonus3");
 let bonus3Html = document.getElementById("bonus3Text");
 let timerBonus3 = document.getElementById("timerBonus3");
 
-let bonus1Multiplicator = 2;
+let bonus1Multiplicator = 1;
 
 let bonus1Cost = 10;
 let bonus2Cost = 100;
@@ -95,7 +95,7 @@ function ableToBuy() {
 //update text cost bonus1:
 
 function bonus1UpdateText() {
-  bonus1.innerHTML = `multiplicator +2 cost ${bonus1Cost}`;
+  bonus1.innerHTML = `multiplicator +1 cost ${bonus1Cost}`;
 }
 
 function bonus1Action() {
